@@ -5,14 +5,10 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'app-root',
   template: `
-  <h1>
-    <app-simple-form (update)="onUpdate($event)"></app-simple-form>
-    <ul>
-      <li *ngFor="let post of posts">
-        {{post.message}}
-      </li>
-    </ul>
-  </h1>
+  <div>
+    <app-form-posts (update)="onUpdate($event)"></app-form-posts>
+    <app-post-list [posts]="posts"></app-post-list>
+  </div>
   `,
   styleUrls: ['./app.component.css']
 })

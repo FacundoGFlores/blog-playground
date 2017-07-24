@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { PostsService } from './posts.service';
+import { PostListComponent } from './post-list/post-list.component';
+import { FormPostsComponent } from './form-posts/form-posts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SimpleFormComponent
+    PostListComponent,
+    FormPostsComponent
   ],
   imports: [
     BrowserModule,

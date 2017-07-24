@@ -1,14 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-simple-form',
-  template: `
-    <input type="text" [(ngModel)]="message" (keydown)="onKeyDown($event)">
-    <button (click)="update.emit({post:message})">Click me!</button>
-  `,
-  styles: []
+  selector: 'app-form-posts',
+  templateUrl: './form-posts.component.html',
+  styleUrls: ['./form-posts.component.css']
 })
-export class SimpleFormComponent implements OnInit {
+export class FormPostsComponent implements OnInit {
   @Input() message;
   @Output() update = new EventEmitter();
 
