@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-post-list',
@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent {
-
   @Input() posts;
+  @Output() deletePost = new EventEmitter();
 }

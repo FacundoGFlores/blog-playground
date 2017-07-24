@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Rx';
   template: `
   <div>
     <app-form-posts (update)="onUpdate($event)"></app-form-posts>
-    <app-post-list [posts]="posts"></app-post-list>
+    <app-post-list (deletePost)="onDeletePost($event)" [posts]="posts"></app-post-list>
   </div>
   `,
   styleUrls: ['./app.component.css']
@@ -27,6 +27,11 @@ export class AppComponent {
 
   onUpdate(e) {
     this.postsService.insertPost(e.post)
+      .subscribe(() => this.reloadPosts())
+  }
+
+  onDeletePost(e) {
+    this.postsService.deletePost(e.id)
       .subscribe(() => this.reloadPosts())
   }
 }
