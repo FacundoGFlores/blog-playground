@@ -25,7 +25,7 @@ export class PostsService {
   }
 
   insertPost(message) {
-    this.posts.push(message);
+    return this.http.post(`${urlBackend}/posts`, { message: message })
   }
 }
 

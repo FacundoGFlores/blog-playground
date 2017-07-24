@@ -26,6 +26,7 @@ export class AppComponent {
   }
 
   onUpdate(e) {
-    this.postsService.insertPost(e.post);
+    this.postsService.insertPost(e.post)
+      .subscribe(() => this.postsService.getPosts().subscribe(data => this.posts = data))
   }
 }
