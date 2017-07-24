@@ -21,12 +21,16 @@ export class AppComponent {
   public posts: Observable<any>
 
   constructor(private postsService: PostsService) {
-    postsService.getPosts()
+    this.reloadPosts()
+  }
+
+  reloadPosts() {
+    this.postsService.getPosts()
       .subscribe(data => this.posts = data)
   }
 
   onUpdate(e) {
     this.postsService.insertPost(e.post)
-      .subscribe(() => this.postsService.getPosts().subscribe(data => this.posts = data))
+      .subscribe(() => this.reloadPosts())
   }
 }
