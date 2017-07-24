@@ -25,8 +25,8 @@ export class AppComponent {
       .subscribe(data => this.posts = data)
   }
 
-  onUpdate(e) {
-    this.postsService.insertPost(e.post)
+  onUpdate(message) {
+    this.postsService.insertPost(message)
       .subscribe(() => this.reloadPosts())
   }
 

@@ -25,7 +25,7 @@ export class PostsService {
   }
 
   insertPost(message) {
-    return this.http.post(`${urlBackend}/posts`, { message: message })
+    return this.http.post(`${urlBackend}/posts`, { message })
   }
 
   deletePost(id) {

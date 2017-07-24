@@ -1,2 +1,2 @@
 <input type="text" [(ngModel)]="message" (keydown)="onKeyDown($event)">
-<button (click)="update.emit({post:message})">Post</button>
+<button (click)="update.emit(message)">Post</button>
